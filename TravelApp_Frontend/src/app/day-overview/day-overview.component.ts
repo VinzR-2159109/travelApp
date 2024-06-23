@@ -18,6 +18,7 @@ import { DayComponent } from '../day/day.component';
 export class DayOverviewComponent implements OnInit {
   days: Day[] = [];
   showForm: boolean = false;
+
   newDay: Day = {
     name: '',
     date: new Date(),

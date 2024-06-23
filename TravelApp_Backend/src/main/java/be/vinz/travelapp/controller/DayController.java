@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Console;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -19,6 +20,7 @@ public class DayController {
     @GetMapping()
     public ResponseEntity<List<Day>> getAllDays() {
         List<Day> days = dayService.getAllDays();
+        System.out.println(days);
         return ResponseEntity.ok(days);
     }
 
