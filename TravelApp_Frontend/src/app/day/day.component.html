@@ -1,0 +1,11 @@
+<div class="day">
+  <div style="display: flex;">
+    <h1 style="margin-right: 10px;">{{ day.name }}</h1>
+    <p>{{ day.date | date }}</p>
+  </div>
+
+  <div *ngFor="let activity of day.activities" class="activity">
+    <app-activity [activity]="activity"></app-activity>
+  </div>
+</div>
+  

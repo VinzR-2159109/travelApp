@@ -1,0 +1,31 @@
+<div class="day-overview">
+    <button (click)="showForm = true">Add New Day</button>
+
+    <div class="day-list">
+        <div *ngIf="days.length === 0">
+            <p>No days added yet!</p>
+        </div>
+        <div *ngFor="let day of days" class="day">
+            <app-day [day]="day"></app-day>
+        </div>
+    </div>
+
+  <div *ngIf="showForm" class="form-overlay">
+    <div class="form-container">
+      <h2>Add New Day</h2>
+      <form (ngSubmit)="addDay()">
+        <label>
+          Day Name:
+          <input type="text" [(ngModel)]="newDay.name" name="name" required>
+        </label>
+        <label>
+          Date:
+          <input type="date" [(ngModel)]="newDay.date" name="date" required>
+        </label>
+        <button type="submit">Add Day</button>
+        <button type="button" (click)="showForm = false">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+  
